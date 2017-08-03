@@ -82,3 +82,4 @@ Sleeping for 95 seconds
 ## Why?
 
 I ran this successfully over two weeks on fifteen webcams simultaneously on a Raspi A, for an art project.
+Postprocessing / movie conversion done with my [image sequence blender](https://github.com/bikubi/image-sequence-blender).
