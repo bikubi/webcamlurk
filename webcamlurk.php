@@ -3,6 +3,23 @@
 
 define('UA', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36');
 
+@list (, $fnprefix, $url, $referer) = $_SERVER['argv'];
+
+if (!$fnprefix || !$url || !$referer) {
+	echo <<<EOT
+USAGE: webcamlurk.php PREFIX URL REFERER
+where URL can contain \$CNT which will be replaced by a timestamp-like, increasing int.
+Example:
+  ./webcamlurk.php \\
+    example \\
+    'http://webcam1.comune.ra.it/record/current.jpg?rand=\$CNT' \\
+    http://www.comune.ra.it/La-Citta/Webcam
+  # (make sure to escape that dollar sign properly for your shell)
+
+EOT;
+die;
+}
+
 function curl_setup(&$curl) {
 	global $referer;
 	curl_setopt($curl, CURLOPT_USERAGENT, UA);
@@ -49,7 +66,6 @@ function download ($dlurl) {
 	}
 }
 	
-list (, $fnprefix, $url, $referer) = $_SERVER['argv'];
 
 
 $minintv = 60;
