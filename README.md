@@ -55,11 +55,6 @@ Different webcam which provides headers and has a lower frequency:
 
 ```
 ./webcamlurk.php bagnocostaazzurra http://www.bagnocostaazzurra.it/stazionemeteo/webcam.jpg http://www.bagnocostaazzurra.it/webcam/webcam.htm
-PHP Warning:  PHP Startup: mailparse: Unable to initialize module
-Module compiled with module API=20151012
-PHP    compiled with module API=20160303
-These options need to match
- in Unknown on line 0
 Headers say last mod was 2017-08-03 16:28:32, will download.
 Downloading from http://www.bagnocostaazzurra.it/stazionemeteo/webcam.jpg after 60 seconds
 After 60 seconds, avgintv is now 55
